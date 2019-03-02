@@ -35,7 +35,7 @@ class ProduceTender(models.Model):
 	t_type = models.CharField(max_length=20,choices=tender_type)
 
 	def __str__(self):
-		return "{} want to {} his {} tons crop to near {} location ".format(self.produce.farmer.username,self.quantity,self.t_type,self.location)
+		return "{} wants {} of {} tons crop to near {} location to be {} ".format(self.produce.farmer.username,self.produce.crop.name,self.quantity,self.location,self.t_type)
 
 class TenderBid(models.Model):
 	tender =  models.ForeignKey(ProduceTender, on_delete= models.CASCADE)

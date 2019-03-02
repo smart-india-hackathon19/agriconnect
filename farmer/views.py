@@ -8,11 +8,11 @@ import datetime
 def homepage(request):
 	return render(request,'homepage/home.html')
 
-def tender(request):
+def tender(request,produce_id):
 	if request.method == "GET":
-		return render(request,'farmer/tender_form.html')
+		return render(request,'farmer/tender_form.html',{"produce_id" : produce_id})
 	else:
-		produce=Produce.objects.get(id=3)
+		produce=Produce.objects.get(id=produce_id)
 		added_on = datetime.datetime.now()
 		tender = ProduceTender.objects.create(produce=produce,location=request.POST['location'],quantity=request.POST['quantity'],added_on=added_on,t_type=request.POST['t_type'])
 		tender.save()
