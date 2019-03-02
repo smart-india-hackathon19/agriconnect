@@ -23,8 +23,12 @@
 					<strong>Expected Delivery Date:</strong>
 					{{produce.expected_delivery_date}}
 				</p>
+			</a>
+			<a href=" {% url 'farmer:tender_form' %}">				
+			<button type="button" class="btn btn-cyan sm-1">Add Tender</button>
 			</a>	
 			</div>
+
 		</div>
 	{% endfor %}
 <!-- <div id="produce-form" class="card produce-card " >

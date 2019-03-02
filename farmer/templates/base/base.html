@@ -32,7 +32,7 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="{% url 'farmer:homepage' %}">Home
           <span class="sr-only">(current)</span>
         </a>
@@ -52,10 +52,10 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Avail A service</a>
+          aria-expanded="false">Avail a service</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Ship Your Produce</a>
-          <a class="dropdown-item" href="#">Find Storage</a>
+          <a class="dropdown-item" href=" {% url "farmer:tender_form" %} ">Ship Your Produce</a>
+          <a class="dropdown-item" href=" {% url "farmer:tender_form" %} ">Find Storage</a>
           <!-- <a class="dropdown-item" href="#">Som</a> -->
         </div>
       </li>

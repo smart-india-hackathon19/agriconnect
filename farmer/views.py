@@ -9,7 +9,10 @@ def homepage(request):
 	return render(request,'homepage/home.html')
 
 def tender(request):
-	return render(request,'farmer/tender_form.html')
+	if request.method == "GET":
+		return render(request,'farmer/tender_form.html')
+	else:
+		pass
 
 def storage_add(request):
 	return render(request,'farmer/storage_form.html')
