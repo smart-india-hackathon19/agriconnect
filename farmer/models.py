@@ -10,7 +10,7 @@ class Crop(models.Model):
 
 
 class Produce(models.Model):
-	fammer = models.ForeignKey(User,on_delete = models.CASCADE)
+	farmer = models.ForeignKey(User,on_delete = models.CASCADE)
 	crop = models.ForeignKey(Crop,on_delete = models.CASCADE)
 	expected_yield = models.IntegerField()
 	expected_delivery_date = models.DateField()
