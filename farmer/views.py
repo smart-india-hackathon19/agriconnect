@@ -7,6 +7,12 @@ from .models import *
 def homepage(request):
 	return render(request,'homepage/home.html')
 
+def storage_add(request):
+	return render(request,'farmer/storage_form.html')
+
+def shipment(request):
+	return render(request,'farmer/shipment_form.html')
+
 def produce_add_form(request):
 	crops = Crop.objects.all()
 	print (crops)
