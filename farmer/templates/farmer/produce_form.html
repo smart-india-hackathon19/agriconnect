@@ -11,8 +11,8 @@
 	    <strong>List your produce</strong>
 	 </h5>
 	 <div class="card-body px-lg-5 pt-0">
-	 	<form class="text-center" style="color: #757575;">
-	 		<select class="custom-select mdb-select md-form custom-select-lg mb-3">
+	 	<form method="post" action="{% url "farmer:produce_add_form" %}" class="text-center" style="color: #757575;">
+	 		<select class="custom-select mdb-select md-form custom-select-lg mb-3" name="crop">
 
 			  <option value="" disabled selected>Choose your Crop</option>
 			  {% for crop in crops %}
@@ -20,9 +20,9 @@
 			  {% endfor %}
 			</select>
 	 		<div class="md-form">
-		        <input type="text" placeholder="Expected Yield (tonnes)" class="form-control">
+		        <input name="yield" type="text" placeholder="Expected Yield (tonnes)" class="form-control">
 		    </div>
-		    <button type="button" class="btn btn-cyan">Save</button>
+		    <button type="submit" class="btn btn-cyan">Save</button>
 	 	</form>
 	 </div>
 </div>
