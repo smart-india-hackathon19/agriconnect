@@ -29,7 +29,7 @@ def produce_add_form(request):
 		expected_delivery_date = datetime.datetime.now()
 		produce = Produce.objects.create(farmer=request.user,crop=crop,expected_delivery_date=expected_delivery_date,expected_yield=request.POST['yield'])
 		produce.save()
-		return redirect('farmer:produce_add_form')
+		return redirect('farmer:produce_list')
 
 def produce_list(request):
 	produces = Produce.objects.filter(farmer=request.user)
@@ -39,5 +39,10 @@ def produce_list(request):
 	return render(request,'farmer/produce_list.html',context)
 
 def tender_list(request,produce_id):
-
-	return render(request,'farmer/tender_list.html')
+	tenders = ProduceTender.objects.filter(produce=produce_id)
+	context = {
+		"sells" : tenders.filter(t_type="sell"),
+		"storages" : tenders.filter(t_type="storage"),
+		"transports" : tenders.filter(t_type="transport")
+	}
+	return render(request,'farmer/tender_list.html',context)
