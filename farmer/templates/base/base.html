@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>AgriConnect</title>
+  <meta name="viewport" content="width=device-width">
 	<link href="{% static "css/bootstrap.min.css"  %}" rel="stylesheet">
 	<link href="{% static "css/mdb.min.css" %}" rel="stylesheet">
 	<link href="{% static "css/mdb.min.css" %}" rel="stylesheet">
@@ -32,7 +33,7 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="{% url 'farmer:homepage' %}">Home
           <span class="sr-only">(current)</span>
         </a>
@@ -50,14 +51,7 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Avail A service</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Ship Your Produce</a>
-          <a class="dropdown-item" href="#">Find Storage</a>
-          <!-- <a class="dropdown-item" href="#">Som</a> -->
-        </div>
+      
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Find Commodity Pricing</a>
