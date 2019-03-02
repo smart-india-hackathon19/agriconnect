@@ -45,7 +45,7 @@
           aria-expanded="false">Produce</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="{% url "farmer:produce_add_form" %}">List Your Produce</a>
-          <a class="dropdown-item" href="#">See Your Quotes</a>
+          <a class="dropdown-item" href=" {% url "farmer:produce_list" %} ">Your Produce</a>
           <!-- <a class="dropdown-item" href="#">Something else</a> -->
         </div>
       </li>
