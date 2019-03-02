@@ -53,3 +53,7 @@ def tender_list(request,produce_id):
 		"transports" : tenders.filter(t_type="transport")
 	}
 	return render(request,'farmer/tender_list.html',context)
+
+def predict_crop_price(request):
+	return render(request,'farmer/predict.html')
+
