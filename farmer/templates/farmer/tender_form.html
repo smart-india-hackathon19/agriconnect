@@ -1,6 +1,162 @@
-{% extends 'base/base.html' %}
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" href="{% static "farmer/css/produce_form.css" %}">
+
+{% endblock head %}
 
 {% block content %}
+<style type="text/css">
+.number-input input[type="number"] {
+  -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+          appearance: textfield;
+}
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.number-input {
+  margin-bottom: 3rem;
+}
+.number-input button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.number-input input[type=number] {
+  text-align: center;
+}
+.number-input.number-input {
+  border: 1px solid #ced4da;
+  width: 10rem;
+  border-radius: .25rem;
+}
+.number-input.number-input button {
+  width: 2.6rem;
+  height: .7rem;
+}
+.number-input.number-input button.minus {
+  padding-left: 10px;
+}
+.number-input.number-input button:before,
+.number-input.number-input button:after {
+  width: .7rem;
+  background-color: #495057;
+}
+.number-input.number-input input[type=number] {
+  max-width: 4rem;
+  padding: .5rem;
+  border: 1px solid #ced4da;
+  border-width: 0 1px;
+  font-size: 1rem;
+  height: 2rem;
+  color: #495057;
 
-asd
+  .column1 {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.column2 {
+  float: left;
+  width: 80%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+}
+</style>
+<div id="produce-form" class="card">
+	<h5 class="card-header info-color white-text text-center py-3">
+	    <strong>Tender Form</strong>
+	 </h5>
+	 <div class="card-body px-lg-5 pt-0">
+	 	<form class="text-center" style="color: #00695c;">
+	 		<!-- <select class="custom-select mdb-select md-form custom-select-lg mb-3">
+
+			  <option value="" disabled selected>Choose your Crop</option>
+			  {% for crop in crops %}
+			 	 <option value="{{crop.id}}">{{crop.name}}</option>
+			  {% endfor %}
+			</select> -->
+	 		<!-- <div class="md-form">
+		        <input type="text" placeholder="Type Your Storage Here!" class="form-control">
+		    </div> -->
+
+		    <div class="md-form">
+		        <input type="text" placeholder="Type Your Location Here!" class="form-control">
+		    </div>
+
+		    <div style="text-align: left;">
+		    Quantity:
+		</div>
+		
+			<div class="row">
+				<div class="column1">
+
+		    <div class="def-number-input number-input" >
+  			<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+  			<input class="quantity" min="0" name="quantity" value="1" type="number">
+  			<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+  			</div>
+
+  				</div>
+
+  				<div class="column2" >
+    
+    				<input placeholder="unit" style="margin-left: 20px;">
+  				</div>
+
+			</div>
+			<select class="custom-select mdb-select md-form custom-select-lg mb-3" name="crop">
+
+			  <option value="" disabled selected>Choose your type of tender</option>
+			  
+			 	 <option value="transport">transport</option>
+			 	 <option value="storage">storage</option>
+			 	 <option value="sell">sell</option>
+			  
+			</select>
+			
+			
+		
+		
+
+		
+  
+
+
+
+
+		    <button type="button" class="btn btn-cyan">Save</button>
+	 	</form>
+	 </div>
+</div>
 {% endblock content %}
