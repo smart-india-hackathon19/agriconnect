@@ -1,5 +1,68 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
+<div class="card produce-card">
+	<div class="card-body">
+		<h4>Sell Tender</h4>
+		{% for sell in sells %}
+		<div class="card produce-card">
+			<div class="card-body">
+				<div class="container">
+					<strong>Crop:</strong>
+					{{sell.produce.crop}}
+					<br>
+					<strong>Location:</strong>
+					{{sell.location}}
+					<br>
+					<strong>Quantity</strong>
+					{{sell.quantity}} tons
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>	
+
+<div class="card produce-card">
+	<div class="card-body">
+		<h4>Transport Tender</h4>
+		{% for transport in transports %}
+		<div class="card produce-card">
+			<div class="card-body">
+				<strong>Crop:</strong>
+					{{transport.produce.crop}}
+					<br>
+					<strong>Location:</strong>
+					{{transport.location}}
+					<br>
+					<strong>Quantity</strong>
+					{{transport.quantity}} tons
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>	
+
+<div class="card produce-card">
+	<div class="card-body">
+		<h4>Storage Tender</h4>
+		{% for storage in storages %}
+		<div class="card produce-card">
+			<div class="card-body">
+				<strong>Crop:</strong>
+					{{storage.produce.crop}}
+					<br>
+					<strong>Location:</strong>
+					{{storage.location}}
+					<br>
+					<strong>Quantity</strong>
+					{{storage.quantity}} tons
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>	
+
+
 
 {% endblock content %}
