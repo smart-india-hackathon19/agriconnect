@@ -8,6 +8,9 @@ import datetime
 def homepage(request):
 	return render(request,'homepage/home.html')
 
+def tender(request):
+	return render(request,'farmer/tender_form.html')
+
 def storage_add(request):
 	return render(request,'farmer/storage_form.html')
 
@@ -34,3 +37,7 @@ def produce_list(request):
 	"produces" : produces
 	}
 	return render(request,'farmer/produce_list.html',context)
+
+def tender_list(request,produce_id):
+
+	return render(request,'farmer/tender_list.html')

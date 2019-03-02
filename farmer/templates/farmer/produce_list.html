@@ -8,21 +8,22 @@
 {% block content %}
 	{% for produce in produces %}
 		<div id="produce-form" class="card produce-card " >
-
 			<div class="card-body">
-			<p class="note note-primary">
-				<strong>Crop:</strong> 
-				{{produce.crop.name}}
-				<br>
-				<strong>Added on:</strong>
-				12/2/2019
-				<br>
-				<strong>Expected Yield:</strong>
-					{{produce.expected_yield}} ton
-				<br>
-				<strong>Expected Delivery Date:</strong>
-				{{produce.expected_delivery_date}}
-			</p>
+			<a href=" {% url 'farmer:tender_list' produce.id %}">
+				<p class="note note-primary">
+					<strong>Crop:</strong> 
+					{{produce.crop.name}}
+					<br>
+					<strong>Added on:</strong>
+					12/2/2019
+					<br>
+					<strong>Expected Yield:</strong>
+						{{produce.expected_yield}} ton
+					<br>
+					<strong>Expected Delivery Date:</strong>
+					{{produce.expected_delivery_date}}
+				</p>
+			</a>	
 			</div>
 		</div>
 	{% endfor %}
