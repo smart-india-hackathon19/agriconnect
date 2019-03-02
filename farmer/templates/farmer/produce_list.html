@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href=" {% static "css/base.css" %} ">
+{% endblock head %}
+
+{% block content %}
+	{% for produce in produces %}
+		<div id="produce-form" class="card produce-card " >
+
+			<div class="card-body">
+			<p class="note note-primary">
+				<strong>Crop:</strong> 
+				{{produce.crop.name}}
+				<br>
+				<strong>Added on:</strong>
+				12/2/2019
+				<br>
+				<strong>Expected Yield:</strong>
+					{{produce.expected_yield}} ton
+				<br>
+				<strong>Expected Delivery Date:</strong>
+				{{produce.expected_delivery_date}}
+			</p>
+			</div>
+		</div>
+	{% endfor %}
+<!-- <div id="produce-form" class="card produce-card " >
+<h4>Previous Produce</h4>
+</div>	 -->
+
+{% endblock content %}

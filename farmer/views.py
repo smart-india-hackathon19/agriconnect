@@ -27,3 +27,10 @@ def produce_add_form(request):
 		produce = Produce.objects.create(farmer=request.user,crop=crop,expected_delivery_date=expected_delivery_date,expected_yield=request.POST['yield'])
 		produce.save()
 		return redirect('farmer:produce_add_form')
+
+def produce_list(request):
+	produces = Produce.objects.filter(farmer=request.user)
+	context = {
+	"produces" : produces
+	}
+	return render(request,'farmer/produce_list.html',context)

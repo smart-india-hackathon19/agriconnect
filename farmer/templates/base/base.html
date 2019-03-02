@@ -6,6 +6,7 @@
 	<link href="{% static "css/bootstrap.min.css"  %}" rel="stylesheet">
 	<link href="{% static "css/mdb.min.css" %}" rel="stylesheet">
 	<link href="{% static "css/mdb.min.css" %}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=" {% static "css/base.css" %} ">
 	<script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js"  %}"></script>
   	<script type="text/javascript" src="{% static "js/popper.min.js"  %}"></script>
   	<script type="text/javascript" src="{% static "js/bootstrap.min.js"  %}"></script>
@@ -32,7 +33,7 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home
+        <a class="nav-link" href="{% url 'farmer:homepage' %}">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -43,7 +44,7 @@
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">Produce</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">List Your Produce</a>
+          <a class="dropdown-item" href="{% url "farmer:produce_add_form" %}">List Your Produce</a>
           <a class="dropdown-item" href="#">See Your Quotes</a>
           <!-- <a class="dropdown-item" href="#">Something else</a> -->
         </div>
