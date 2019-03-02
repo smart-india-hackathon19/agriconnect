@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" href="{% static "farmer/css/produce_form.css" %}">
+{% endblock head %}
+
+{% block content %}
+<div id="produce-form" class="card">
+	<h5 class="card-header info-color white-text text-center py-3">
+	    <strong>List your produce</strong>
+	 </h5>
+	 <div class="card-body px-lg-5 pt-0">
+	 	<form class="text-center" style="color: #757575;">
+	 		<select class="custom-select mdb-select md-form custom-select-lg mb-3">
+
+			  <option value="" disabled selected>Choose your Crop</option>
+			  {% for crop in crops %}
+			 	 <option value="{{crop.id}}">{{crop.name}}</option>
+			  {% endfor %}
+			</select>
+	 		<div class="md-form">
+		        <input type="text" placeholder="Expected Yield (tonnes)" class="form-control">
+		    </div>
+		    <button type="button" class="btn btn-cyan">Save</button>
+	 	</form>
+	 </div>
+</div>
+{% endblock content %}
