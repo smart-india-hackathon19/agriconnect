@@ -98,7 +98,7 @@
 	    <strong>Tender Form</strong>
 	 </h5>
 	 <div class="card-body px-lg-5 pt-0">
-	 	<form class="text-center" style="color: #00695c;">
+	 	<form class="text-center" style="color: #00695c;" action="{% url "farmer:tender_form" %}" method="post">
 	 		<!-- <select class="custom-select mdb-select md-form custom-select-lg mb-3">
 
 			  <option value="" disabled selected>Choose your Crop</option>
@@ -111,7 +111,7 @@
 		    </div> -->
 
 		    <div class="md-form">
-		        <input type="text" placeholder="Type Your Location Here!" class="form-control">
+		        <input type="text" name="location" placeholder="Type Your Location Here!" class="form-control">
 		    </div>
 
 		    <div style="text-align: left;">
@@ -131,7 +131,7 @@
 
   				<div class="column2" >
     
-    				<input placeholder="unit" style="margin-left: 20px;">
+    				<input placeholder="unit" name="unit" style="margin-left: 20px;">
   				</div>
 
 			</div>
@@ -155,7 +155,7 @@
 
 
 
-		    <button type="button" class="btn btn-cyan">Save</button>
+		    <button type="submit" class="btn btn-cyan">Save</button>
 	 	</form>
 	 </div>
 </div>

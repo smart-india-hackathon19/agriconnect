@@ -12,7 +12,11 @@ def tender(request):
 	if request.method == "GET":
 		return render(request,'farmer/tender_form.html')
 	else:
-		pass
+		produce=Produce.objects.get(id=3)
+		added_on = datetime.datetime.now()
+		tender = ProduceTender.objects.create(produce=produce,location=request.POST['location'],quantity=request.POST['quantity'],added_on=added_on,t_type=request.POST['t_type'])
+		tender.save()
+		return redirect('farmer:tender_list',produce_id=produce.id)
 
 def storage_add(request):
 	return render(request,'farmer/storage_form.html')
