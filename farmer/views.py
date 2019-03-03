@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import *
 import datetime
+import csv
 # Create your views here.
 
 
@@ -54,6 +55,15 @@ def tender_list(request,produce_id):
 	}
 	return render(request,'farmer/tender_list.html',context)
 
-def predict_crop_price(request):
-	return render(request,'farmer/predict.html')
+def predict_crop_price(request,name):
+	return render(request,'farmer/predict.html',{"name" : name})
+
+def csv_process(request,name):
+	response = HttpResponse()
+	writer = csv.writer(response)
+	writer.writerow(["date","close"])
+	commodities = Commodity.objects.filter(name=name).order_by('date')
+	for commoditity	in commodities:
+		row = writer.writerow([commoditity.date,commoditity.price])
+	return response
 

@@ -41,3 +41,10 @@ class TenderBid(models.Model):
 	tender =  models.ForeignKey(ProduceTender, on_delete= models.CASCADE)
 	accepted = models.BooleanField(default=False)
 
+class Commodity(models.Model):
+	name = models.CharField(max_length=300)
+	date = models.DateField(default='2018-01-01')
+	price = models.IntegerField()
+
+		
+
