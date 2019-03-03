@@ -64,6 +64,9 @@ def csv_process(request,name):
 	response = HttpResponse()
 	writer = csv.writer(response)
 	writer.writerow(["date","close"])
+	if name == "random":
+		name = Commodity.objects.all().order_by('?').first().name
+		print (name)
 	commodities = Commodity.objects.filter(name=name).order_by('date')
 	for commoditity	in commodities:
 		row = writer.writerow([commoditity.date,commoditity.price])
