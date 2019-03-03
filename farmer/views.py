@@ -7,7 +7,9 @@ import csv
 
 
 def homepage(request):
-	return render(request,'homepage/home.html')
+	commoditity = Commodity.objects.order_by().values('name').distinct()
+	context = {"crops" : commoditity}
+	return render(request,'homepage/home.html',context)
 
 def tender(request,produce_id):
 	if request.method == "GET":

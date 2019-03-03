@@ -1,4 +1,37 @@
 {% extends 'base/base.html' %}
 
+{% block head %}
+{% endblock head %}
+
+
 {% block content %}
+<div class="container">
+	
+<form method="post" id="Trendform" class="text-center" style="color: #757575;" >
+	 		<select class="custom-select mdb-select md-form custom-select-lg mb-3" name="crop">
+
+			  <option value="" disabled selected>Choose your Crop</option>
+			  {% for crop in crops %}
+			 	 <option value="{{crop.name}}">{{crop.name}}</option>
+			  {% endfor %}
+			</select>
+
+			<button type="button" onclick="myFunction()" class="btn btn-cyan">See Trends</button>
+</form>
+</div>
+
+
+<script type="text/javascript">
+	function myFunction(){
+		if( $('#Trendform').serialize().split('=').length && $('#Trendform').serialize().split('=')[1] )
+		{
+			window.location = 'predict_crop_price/' + $('#Trendform').serialize().split('=')[1];
+		}
+		else{
+
+		}
+	}
+</script>
+
+
 {% endblock content %}
